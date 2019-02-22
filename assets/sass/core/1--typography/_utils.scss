@@ -1,0 +1,31 @@
+/* Font size */
+@for $i from 1 to 6 {
+  .fs-#{$i + "0"}.fs-#{$i + "0"} {
+    font-size: #{$i}rem;
+  }
+  .fs-#{$i + "5"}.fs-#{$i + "5"} {
+    font-size: #{$i + ".5"}rem;
+  }
+}
+
+/* Text align */
+@each $align in left, center, right {
+  .text-#{$align}.text-#{$align} {
+    text-align: $align;
+  }
+}
+
+/* Transform text */
+@each $tranform in lowercase, uppercase, capitalize {
+  .text-#{$tranform}.text-#{$tranform} {
+    text-transform: $tranform;
+  }
+}
+
+
+/* Font weight */
+@each $name, $weight in ('light', 200), ('normal', 400), ('sbold', 600), ('bold', 700), ('xbold', 800) {
+  .fw-#{$name}.fw-#{$name} {
+    font-weight: $weight;
+  }
+}

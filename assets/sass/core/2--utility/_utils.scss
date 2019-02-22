@@ -1,0 +1,21 @@
+/* Position */
+@each $name, $left, $right in (left, auto, 0), (center, auto, auto), (right, 0, auto) {
+  .pos-#{$name} {
+    margin-left: $left;
+    margin-right: $right;
+  }
+}
+
+@each $prefix, $property in ('p', 'padding'), ('m', 'margin') {
+  /*# #{$property} #*/
+  @each $suffix, $direction in ('', ''), ('t', '-top'), ('b', '-bottom'), ('l', '-left'), ('r', '-right') {
+    @if($direction != '') {
+      /* #{str-slice($direction, 2)} */
+    }
+    @each $value in 0, 5, 10, 15, 20, 25, 30, 35, 40 {
+      .#{$prefix}#{$suffix}-#{$value}.#{$prefix}#{$suffix}-#{$value} {
+        #{$property}#{$direction}: #{$value}px;
+      }
+    }
+  }
+}

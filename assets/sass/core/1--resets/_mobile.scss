@@ -1,0 +1,8 @@
+/*
+ * Remove the unwanted box around link
+ * More info: http://goo.gl/IPwKi
+ */
+a, .tap-highlight-color {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}

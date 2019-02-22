@@ -1,0 +1,15 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  max-height: 100%;
+  background-color: $palette-blue-grey-50;
+  header {
+    padding: 5px 10px;
+    background-color: $palette-blue-800
+  }
+  main {
+    padding: 10px 20px;
+  }
+}

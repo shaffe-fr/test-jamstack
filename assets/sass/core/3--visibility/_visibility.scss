@@ -1,0 +1,37 @@
+/** Visibility **/
+$breakpointValues: map-values($breakpoints);
+@function prevClass ($breakpoint, $type) {
+  $id: get-slice-id($breakpoint);
+  $class: '';
+
+  @while $id >= 1 {
+    $name: nth(nth($breakpointValues, $id), 1);
+    $class: $class + ', .#{$type}-from-#{$name}';
+    $id: $id - 1;
+  }
+  @return $class;
+}
+
+@function nextClass ($breakpoint, $type) {
+  $id: get-slice-id($breakpoint);
+  $class: '';
+
+  @while $id <= total-slices() {
+    $name: nth(nth($breakpointValues, $id), 1);
+    $class: $class + ', .#{$type}-to-#{$name}';
+    $id: $id + 1;
+  }
+  @return $class;
+}
+
+@each $key, $breakpoint in $breakpoints {
+  $name: nth($breakpoint, 1);
+  @include at($key) {
+    .hidden--#{$name} #{prevClass($key, 'hidden')} #{nextClass($key, 'hidden')} {
+      display: none;
+    }
+    .visible--#{$name} #{prevClass($key, 'hidden')} #{nextClass($key, 'hidden')} {
+      display: block;
+    }
+  }
+}

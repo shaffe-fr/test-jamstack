@@ -1,0 +1,58 @@
+// Mixins for width calculation.
+@function col-size($col) {
+  @return #{($col/$flex-cols * 100) + '%'};
+}
+
+@mixin make-grid($name: null) {
+  $prefix: 'col';
+  $sufix: '';
+  @if ($name) {
+    $sufix: '-#{$name}';
+    $prefix: #{$prefix + $sufix};
+  }
+
+  @if ($prefix-grid != '' and $sufix == '') {
+    $prefix: #{$prefix-grid + '-col'};
+  }
+  @else if ($prefix-grid != "") {
+    $prefix: #{$prefix-grid + $sufix};
+  }
+
+  .#{$prefix} {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+
+  .#{$prefix}-auto {
+    flex: 0 0 auto;
+    @if ($name == null) {
+      min-width: 0;
+    }
+    .row > & {
+      width: auto;
+    }
+  }
+
+  @for $i from 1 through ($flex-cols) {
+    // order
+    .order#{$sufix}-#{$i} {
+      order: $i;
+    }
+
+    // column
+    .#{$prefix}-#{$i} {
+      flex: 0 0 col-size($i);
+      min-height: 1px;
+      .row > & {
+        width: 100%;
+        max-width: col-size($i);
+      }
+    }
+
+    // offset
+    .#{$prefix}-#{$i}-offset {
+      margin-left: col-size($i);
+    }
+  }
+}

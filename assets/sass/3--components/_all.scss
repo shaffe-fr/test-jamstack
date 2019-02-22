@@ -1,0 +1,6 @@
+.main-menu a {
+  color: $color-white;
+  &:hover {
+    color: darken($color-white, 5%);
+  }
+}

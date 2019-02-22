@@ -1,0 +1,34 @@
+/* Align items */
+@each $option, $value in ('start', flex-start), ('center', center), ('end', flex-end), ('stretch', stretch), ('baseline', baseline) {
+  .align-items-#{$option} {
+    align-items: $value;
+  }
+  .align-self-#{$option} {
+    align-self: $value;
+  }
+  .align-content-#{$option} {
+    align-content: $value
+  }
+}
+
+/* Justify content */
+@each $option, $value in ('start', flex-start), ('center', center), ('end', flex-end), ('around', space-around), ('between', space-between) {
+  .justify-content-#{$option} {
+    justify-content: $value;
+  }
+}
+
+/* Wrap grid */
+@each $option in nowrap, wrap, wrap-reverse {
+  .#{$option} {
+    flex-wrap: $option;
+  }
+}
+
+/* Flex position */
+@each $option, $value in ('start', flex-start), ('center', center), ('end', flex-end) {
+  .flex-#{$option} {
+    align-items: $value;
+    justify-content: $value;
+  }
+}

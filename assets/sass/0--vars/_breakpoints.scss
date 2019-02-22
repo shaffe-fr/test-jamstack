@@ -1,0 +1,7 @@
+// @var $layout-container-max-width est définit dans grid
+$slicer-breakpoints: 0 480px 768px 992px $layout-container-max-width;
+
+// Liste des breakpoints et leur alias
+$breakpoints: ('phone': ('ph', 8px), 'small': ('sm', 16px), 'medium': ('md', 32px), 'large': ('lg', 48px), 'max': ('xl', 64px));
+$slicer-breakpoint-names: map-keys($breakpoints);
+$slicer-anti-overlap-corrections: -1px

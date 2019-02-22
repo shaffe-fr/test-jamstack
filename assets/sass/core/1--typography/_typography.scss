@@ -1,0 +1,145 @@
+html {
+  font-family: $performance_font;
+  font-weight: 400;
+  font-size: calc(1em * .625); /* IE9-IE11 math fixing. See http://bit.ly/1g4X0bX */
+  color: $text-color-primary;
+}
+
+body {
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+body, .preferred-font {
+  @include typo-preferred-font();
+}
+
+a {
+  text-decoration: none;
+  color: $text-link-color;
+  &:hover {
+    color: $text-link-hover;
+  }
+}
+
+h1,
+.h1-size {
+  font-size: $h1-size*0.6;
+  line-height: $h1-height*0.6;
+  margin-top: $h1-top*0.3;
+  margin-bottom: $h1-bottom*0.3;
+  @include from(small) {
+    font-size: $h1-size*0.8;
+    line-height: $h1-height*0.8;
+    margin-top: $h1-top*0.5;
+    margin-bottom: $h1-bottom*0.5;
+  }
+  @include from(medium) {
+    font-size: $h1-size;
+    line-height: $h1-height;
+    margin-top: $h1-top;
+    margin-bottom: $h1-bottom;
+  }
+}
+
+h2,
+.h2-size {
+  font-size: $h2-size*0.6;
+  line-height: $h2-height*0.6;
+  margin-top: $h2-top*0.3;
+  margin-bottom: $h2-bottom*0.3;
+  @include from(small) {
+    font-size: $h2-size*0.8;
+    line-height: $h2-height*0.8;
+    margin-top: $h2-top*0.5;
+    margin-bottom: $h2-bottom*0.5;
+  }
+  @include from(medium) {
+    font-size: $h2-size;
+    line-height: $h2-height;
+    margin-top: $h2-top;
+    margin-bottom: $h2-bottom;
+  }
+}
+
+h3,
+.h3-size {
+  font-size: $h3-size*0.6;
+  line-height: $h3-height*0.6;
+  margin-top: $h3-top*0.3;
+  margin-bottom: $h3-bottom*0.3;
+  @include from(small) {
+    font-size: $h3-size*0.8;
+    line-height: $h3-height*0.8;
+    margin-top: $h3-top*0.5;
+    margin-bottom: $h3-bottom*0.5;
+  }
+  @include from(medium) {
+    font-size: $h3-size;
+    line-height: $h3-height;
+    margin-top: $h3-top;
+    margin-bottom: $h3-bottom;
+  }
+}
+
+h4,
+.h4-size {
+  font-size: $h4-size*0.6;
+  line-height: $h4-height*0.6;
+  margin-top: $h4-top*0.3;
+  margin-bottom: $h4-bottom*0.3;
+  @include from(small) {
+    font-size: $h4-size*0.8;
+    line-height: $h4-height*0.8;
+    margin-top: $h4-top*0.5;
+    margin-bottom: $h4-bottom*0.5;
+  }
+  @include from(medium) {
+    font-size: $h4-size;
+    line-height: $h4-height;
+    margin-top: $h4-top;
+    margin-bottom: $h4-bottom;
+  }
+}
+
+h5,
+.h5-size {
+  font-size: $h5-size*0.6;
+  line-height: $h5-height*0.6;
+  margin-top: $h5-top*0.3;
+  margin-bottom: $h5-bottom*0.3;
+  @include from(small) {
+    font-size: $h5-size*0.8;
+    line-height: $h5-height*0.8;
+    margin-top: $h5-top*0.5;
+    margin-bottom: $h5-bottom*0.5;
+  }
+  @include from(medium) {
+    font-size: $h5-size;
+    line-height: $h5-height;
+    margin-top: $h5-top;
+    margin-bottom: $h5-bottom;
+  }
+}
+
+h6,
+.h6-size {
+  font-size: $h6-size*0.6;
+  line-height: $h6-height*0.6;
+  margin-top: $h6-top*0.3;
+  margin-bottom: $h6-bottom*0.3;
+  @include from(small) {
+    font-size: $h6-size*0.8;
+    line-height: $h6-height*0.8;
+    margin-top: $h6-top*0.5;
+    margin-bottom: $h6-bottom*0.5;
+  }
+  @include from(medium) {
+    font-size: $h6-size;
+    line-height: $h6-height;
+    margin-top: $h6-top;
+    margin-bottom: $h6-bottom;
+  }
+}
+
+@import "utils";
